@@ -21,6 +21,7 @@
 
 body{
     background-color: var(--grayish);
+    height: 100%;
     margin: 0px;
     padding: 0px;
     font-family: 'Sora';
@@ -67,6 +68,10 @@ button[type = toggle-mode]{
     float: right;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .box{
     font-size: 20px;
     color: var(--black);
@@ -79,11 +84,10 @@ button[type = toggle-mode]{
 }
 
 .left-box, .right-box{
-    padding-top: 95px;
-    height: 100vh;
+    min-height: 100%;
     width: 50%;
-    padding-left: 40px;
-    padding-right: 40px
+    padding: 95px 40px 40px 40px;
+    justify-content: center;
 }
 
 .left-box{
@@ -93,6 +97,7 @@ button[type = toggle-mode]{
 .right-box{
     background-color: var(--white);
     border: 1px solid var(--grayish);
+    height: auto !important;
 }
 
 h1{
@@ -235,12 +240,9 @@ p{
 }
 
 .results{
-    width: 80%;
+    width: auto;
     height: 310px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 10px 30px;
 
     border-radius: 15px;
     background-color: var(--grayish);

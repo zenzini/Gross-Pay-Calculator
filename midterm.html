@@ -2,15 +2,14 @@
 <html>
 <head>
 <title>DreamBig Gross Pay Calculator</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class = "fixed-header">
         <div class = "header-content">
-            <picture>
-                <source srcset="img/logo_light.png" media="(prefers-color-scheme: dark)">
-                <img src = "img/logo_dark.png" width="160px" style="transform: translateY(20%)">
+            <picture id="logo-picture">
+                <img id="logo-image" width="160px" style="transform: translateY(20%)">
             </picture>
             <input type = "search" id = "search" name = "search" placeholder="Search">
             
@@ -72,10 +71,10 @@
             </div>
 
             <div class = "buttons">
-                <button class = "button" onClick="zero()" value = "mt">
+                <button class = "button" onClick="zero()" value = "mt" style="transition: 0.2s">
                     clear
                 </button>
-                <button class = "button" onClick="calculate()" value = "st">
+                <button class = "button" onClick="calculate()" value = "st" style="transition: 0.2s">
                     calculate
                 </button>
             </div>
@@ -158,6 +157,7 @@
             </h4>
         </div>
     </div>
-    <script src="scripts.js"></script> 
 </body>
+
+<script src="script.js"></script> 
 </html>

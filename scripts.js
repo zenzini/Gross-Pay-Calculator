@@ -53,8 +53,30 @@ function zero(){
     document.getElementById("total").innerHTML = res;
 }
 
-document.getElementById("mode").onclick = () => {
-const colorScheme = document.documentElement.getAttribute("colors");  
-document.documentElement.setAttribute("colors", colorScheme === "default" ? "dark" : "default");
+// Get the initial color scheme preference
+const colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+document.documentElement.setAttribute('colors', colorScheme);
+const logoImage = document.getElementById('logo-image');
+const srcLight = "img/logo_dark.png"
+const srcDark = "img/logo_light.png"
 
-}
+if (colorScheme === 'dark') {
+    logoImage.setAttribute('src', srcDark);
+} else {
+    logoImage.setAttribute('src', srcLight);
+} 
+
+document.getElementById("mode").onclick = () => {
+const logoImage = document.getElementById('logo-image');
+const colorScheme = document.documentElement.getAttribute("colors");
+const srcLight = "img/logo_dark.png"
+const srcDark = "img/logo_light.png"
+
+if (colorScheme === 'default') {
+    logoImage.setAttribute('src', srcDark);
+} else {
+    logoImage.setAttribute('src', srcLight);
+} 
+// Toggle the color scheme attribute between 'default' and 'dark'
+document.documentElement.setAttribute("colors", colorScheme === "default" ? "dark" : "default");
+};
